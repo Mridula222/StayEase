@@ -7,7 +7,7 @@ const L=listingSchema=new Schema({
         required:true,
     },
     description:String,
-    image:{
+    images:{
         type:String,
         default:
             "https://unsplash.com/photos/scenic-mountain-valley-with-winding-road-and-trees-JN4yXG7iNTo",
