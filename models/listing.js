@@ -1,28 +1,34 @@
-const mongoose=require("mongoose");
-const Schema=mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const L=listingSchema=new Schema({
-    title:{
-        type:String,
-        required:true,
-    },
+
+const listingSchema = new Schema({
+
+    // title:String,
     description:String,
-    images:{
-        type:String,
-        default:
-            "https://unsplash.com/photos/scenic-mountain-valley-with-winding-road-and-trees-JN4yXG7iNTo",
+    image: {
+       filename: String,
+       url: String
+     },
 
-        set:(v)=>
-        v === "" 
-        ? "https://unsplash.com/photos/scenic-mountain-valley-with-winding-road-and-trees-JN4yXG7iNTo"
-        :v,
+    title: {
+        type: String,
+        required: true,
     },
-    
-    price:Number,
-    
-    location:String,
-    country:String,
+    // description: String,
+    // image: {
+    //     type: String,
+    //     default:"https://images.unsplash.com/photo-1625505826533-5c80aca7d157?...",
+    //     set: (v) =>
+    //         v === ""
+    //             ? "https://images.unsplash.com/photo-1625505826533-5c80aca7d157?..."
+    //             : v,
+    // },
+    price: Number,
+    location: String,
+    country: String,
 });
 
-const Listing=mongoose.model("Listing",listingSchema);
-module.exports=Listing;
+const Listing = mongoose.model("Listing", listingSchema);
+module.exports = Listing;
+
