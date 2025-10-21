@@ -117,7 +117,7 @@ app.post("/listings/:id/review",validateReview,wrapAsync(async(req,res)=>{
     await listing.save();
 
     res.redirect(`/listings/${listing._id}`);
-}))
+}));
 // app.get("/testListing",async(req,res)=>{
 //     let sampleListing=new Listing({
 //         title:"My New Villa",
@@ -136,6 +136,16 @@ app.post("/listings/:id/review",validateReview,wrapAsync(async(req,res)=>{
 // app.all("(.*)", (req, res, next) => {
 //   next(new ExpressError(404, "Page Not Found!"));
 // });
+
+//Delete Review Route
+app.delete("/listings/:id/reviews/:reviewId",wrapAsync(async(req,res)=>{
+    let{id,reviewId}=req.params;
+    await Listing.findByIdAndUpdate(id,{$pull:{reviews:reviewId}})
+    await Review.findByIdAndDelete(reviewId);
+    res.redirect(`/listings/${id}`);
+
+}));
+
 
 app.use((err,req,res,next)=>{
     let{statusCode=500,message="Something Went Wrong!"}=err;
