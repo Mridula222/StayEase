@@ -45,11 +45,14 @@ This repository includes both the **frontend (React + Tailwind)** and **backend 
 ```bash
 git clone https://github.com/<your-username>/stayease.git
 cd stayease
+```
 
 🚀 Backend Setup
 2. Install backend dependencies
+```bash
 cd backend
 npm install
+```
 
 3. Create a .env file inside backend/
 PORT=5000
