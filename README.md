@@ -48,19 +48,22 @@ cd stayease
 ```
 
 🚀 Backend Setup
-2. Install backend dependencies
+
+### 2. Install backend dependencies
 ```bash
 cd backend
 npm install
 ```
 
-3. Create a .env file inside backend/
+### 3. Create a .env file inside backend/
+```bash
 PORT=5000
 MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/stayease?retryWrites=true&w=majority
 JWT_SECRET=your_jwt_secret_here
 CLIENT_URL=http://localhost:3000
+```
 
-4. Start the backend server
+### 4. Start the backend server
 ```bash
 npm run dev
 # or
@@ -69,19 +72,19 @@ node server.js
 
 
 Frontend Setup
-5. Install frontend dependencies
+### 5. Install frontend dependencies
 Open a new terminal:
 ```bash
 cd ../frontend
 npm install
 ```
 
-6. Create .env inside frontend/
+### 6. Create .env inside frontend/
 ```bash
 VITE_API_URL=http://localhost:5000/api
 ```
 
-7. Start the frontend
+### 7. Start the frontend
 ```bash
 npm run dev
 ```
