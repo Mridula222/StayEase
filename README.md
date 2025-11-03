@@ -61,83 +61,67 @@ JWT_SECRET=your_jwt_secret_here
 CLIENT_URL=http://localhost:3000
 
 4. Start the backend server
+```bash
 npm run dev
 # or
 node server.js
+```
+
 
 Frontend Setup
 5. Install frontend dependencies
-
 Open a new terminal:
-
+```bash
 cd ../frontend
 npm install
+```
 
 6. Create .env inside frontend/
+```bash
 VITE_API_URL=http://localhost:5000/api
+```
 
 7. Start the frontend
+```bash
 npm run dev
+```
 
 API (High Level)
+
 Auth Routes
-
 POST /api/auth/register — Register user
-
 POST /api/auth/login — Login & get JWT
 
 Listings Routes
-
-GET /api/listings — Get all listings
-
-POST /api/listings — Create listing (auth required)
-
-GET /api/listings/:id — Listing details
-
-PUT /api/listings/:id — Update listing
-
-DELETE /api/listings/:id — Delete listing
+1.GET /api/listings — Get all listings
+2.POST /api/listings — Create listing (auth required)
+3.GET /api/listings/:id — Listing details
+4.PUT /api/listings/:id — Update listing
+5.DELETE /api/listings/:id — Delete listing
 
 Booking Routes
-
 POST /api/bookings — Create booking
-
 GET /api/bookings/user — Get user bookings
 
 Authentication Flow — Simple Explanation
-
-User registers with email & password
-
-Backend hashes password using bcrypt
-
-On login → backend validates password, returns JWT
-
-Frontend stores JWT (in memory or httpOnly cookie)
-
-Protected routes require valid token
+1.User registers with email & password
+2.Backend hashes paswsord using bcrypt
+3.On login → backend validates password, returns JWT
+4.Frontend stores JWT (in memory or httpOnly cookie)
+5.Protected routes require valid token
 
 Tips / Notes
-
 Use MongoDB Atlas for easy setup
-
 Keep your JWT_SECRET long & secure
-
 Never commit .env files
-
 Use httpOnly cookies in production for security
 
 Roadmap / TODO
-
 Stripe payments integration
-
 Better calendar availability UI
-
 Host profile & rating system
-
 Email notifications for bookings
-
 Unit & integration tests
-
 Deployment on Vercel / Render + MongoDB Atlas
 
 License
