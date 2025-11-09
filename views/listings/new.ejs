@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StayEase</title>
-</head>
-<body>
+
     <% layout("/layouts/boilerplate")%>
     <div class="row mt-3">
         <div class="col-8 offset-2">
@@ -14,7 +7,7 @@
     <form method="POST" action="/listings" novalidate class="needs-validation">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input name="listing[title]" placeholder="Add a catchy title" type="text" class="form-control" required>
+            <input name="listing[title]" placeholder="Add a catchy title" type="text" class="form-control" required/>
             <div class="valid-feedback">Title looks good!</Title></div>
         </div>
         <div class="mb-3">
@@ -47,5 +40,3 @@
     </form>
     </div>
     </div>
-</body>
-</html>
