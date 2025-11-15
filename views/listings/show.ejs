@@ -19,22 +19,23 @@
 
     <img src="<%= imgSrc %>" class="card-img-top show-img" alt="listing_image" style="object-fit:cover; height:20rem;">
     <div class="card-body">
-      <p class="card-text">
-        <%= listing.description %><br>
-        &#8377; <%= listing.price ? Number(listing.price).toLocaleString("en-IN") : "N/A" %> / night
-        <div><%= listing.location %></div>
-        <div><%= listing.country %></div>
-      </p>
+      <p class="card-text">Owned by<i><%= listing.owner.username %></i></p>
+
+        <p class="card-text"> <%= listing.description %></p>
+        <p class="card-text">&#8377; <%= listing.price ? Number(listing.price).toLocaleString("en-IN") : "N/A" %> / night</p>
+        <p class="card-text"> <%= listing.location %></p>
+        <p class="card-text"> <%= listing.country %></p>
     </div>
   </div>
 
   <br>
-  <div class="btns mt-3">
+  <div class="col-8 offset-3">
     <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark edit-btn">Edit</a>
     <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE" style="display:inline-block;">
       <button type="submit" class="btn btn-dark ms-2">Delete</button>
     </form>
   </div>
+
 
   <div class="col-8 offset-3">
     <hr>
