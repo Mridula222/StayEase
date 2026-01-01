@@ -1,4 +1,4 @@
-const Listing = require("./models/Listing");
+const Listing = require("./models/listing");
 const Review = require("./models/review");
 // const Review = require("./models/review.js");
 const ExpressError = require("./utils/ExpressError.js");
